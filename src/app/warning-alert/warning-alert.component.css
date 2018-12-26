@@ -1,0 +1,7 @@
+.warning-alert-container {
+  background-color: rgb(248, 215, 142);
+  color: red;
+  border: 1px solid red;
+  margin-top: 10px;
+  border-radius: 10px;
+}

@@ -1,0 +1,7 @@
+.success-alert-container {
+  background-color: rgb(196, 247, 167);
+  color: green;
+  border: 1px solid green;
+  margin-top: 10px;
+  border-radius: 10px;
+}
