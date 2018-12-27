@@ -1,10 +1,14 @@
-Data Binding: <input class="form-control" type="text" (input)="onUpdateServerName($event)">
-Two-way Binding: <input class="form-control" type="text" [(ngModel)]="serverName">
+<!-- Data Binding: <input class="form-control" type="text" (input)="onUpdateServerName($event)">
+Two-way Binding: <input class="form-control" type="text" [(ngModel)]="serverName"> -->
+<label for="">Server Name</label>
+<input class="form-control" type="text" [(ngModel)]="serverName">
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
   Add Server
 </button>
 <br><br>
-<p> {{ serverName }} </p>
-<p> {{ serverCreationStatus }} </p>
+<p *ngIf="serverCreated; else noServer"> Server '{{ serverName }}' was created </p>
+<ng-template #noServer>
+  <p>No server created</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
