@@ -1,1 +1,5 @@
-<p> {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }} </p>
+Username: <input class="form-control" type="text" [(ngModel)]="username">
+<p> {{ username }} </p>
+<button class="btn btn-primary" [disabled]="isEmpty(username)" (click)="onLogin()">
+  Login
+</button>

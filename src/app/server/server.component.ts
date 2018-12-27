@@ -7,10 +7,14 @@ import { Component } from '@angular/core';
 
 export class ServerComponent {
 
-  serverId = 82;
-  serverStatus = 'offline';
+  username = '';
 
-  getServerStatus() {
-    return this.serverStatus;
+  isEmpty() {
+    return this.username.length === 0;
   }
+
+  onLogin() {
+    this.username = null;
+  }
+
 }
