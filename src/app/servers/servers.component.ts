@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Server } from 'net';
 
 @Component({
   selector: 'app-servers',      // selecting based on the custom tag
@@ -10,9 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 
   allowNewServer = false;
-  serverCreationStatus = 'No server created!';
   serverName = '';
   serverCreated = false;
+  servers = ['help', 'timepass'];
 
   constructor() {
     setTimeout(() => {
@@ -23,8 +24,9 @@ export class ServersComponent implements OnInit {
   ngOnInit() {}
 
   onCreateServer() {
-    this.serverCreationStatus = 'Server created!';
     this.serverCreated = true;
+    this.servers.push(this.serverName);
+    this.serverName = '';
   }
 
   onUpdateServerName(event: Event) {

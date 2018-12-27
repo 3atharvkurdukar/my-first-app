@@ -10,5 +10,4 @@ Two-way Binding: <input class="form-control" type="text" [(ngModel)]="serverName
 <ng-template #noServer>
   <p>No server created</p>
 </ng-template>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
