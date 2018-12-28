@@ -1,5 +1,17 @@
-<p
-  [ngStyle]="{backgroundColor: getColor()}"
-  [ngClass]="{online: serverStatus === 'online'}">
-  {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+<button class="btn-btn-primary" (click)="onDisplayDetails()">
+  Display Details
+</button>
+<p *ngIf="showParagraph">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae magnam quo quaerat
+  totam suscipit dolor tenetur nisi velit itaque ad saepe et facilis alias eligendi
+  quis id, dolore veritatis dignissimos?
 </p>
+<br>
+<label for="">Timestamps:</label>
+<div *ngFor="let log of logs">
+   <div
+    [ngClass]="{'white-text': largeLogs(log)}"
+    [ngStyle]="{backgroundColor: largeLogs(log) ? '#0000ff' : '#ffffff'}">
+    {{ log }}
+  </div>
+</div>

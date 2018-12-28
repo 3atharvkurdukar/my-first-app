@@ -8,18 +8,18 @@ import { Component } from '@angular/core';
 
 export class ServerComponent {
 
-  serverId = 82;
-  serverStatus = 'offline';
+  showParagraph = false;
+  logs = [];
 
   constructor() {
-    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
   }
 
-  getServerStatus() {
-    return this.serverStatus;
+  onDisplayDetails() {
+    this.showParagraph = !this.showParagraph;
+    this.logs.push(new Date().getTime());
   }
 
-  getColor() {
-    return this.serverStatus === 'online' ? 'green' : 'red';
+  largeLogs (log) {
+    return this.logs.indexOf(log) >= 4;
   }
 }
