@@ -8,10 +8,10 @@
 </p>
 <br>
 <label for="">Timestamps:</label>
-<div *ngFor="let log of logs">
+<div *ngFor="let log of logs; let i = index">
    <div
-    [ngClass]="{'white-text': largeLogs(log)}"
-    [ngStyle]="{backgroundColor: largeLogs(log) ? '#0000ff' : '#ffffff'}">
+    [ngClass]="{'white-text': i >= 4}"
+    [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}">
     {{ log }}
   </div>
 </div>

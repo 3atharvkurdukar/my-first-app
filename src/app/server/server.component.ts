@@ -18,8 +18,4 @@ export class ServerComponent {
     this.showParagraph = !this.showParagraph;
     this.logs.push(new Date().getTime());
   }
-
-  largeLogs (log) {
-    return this.logs.indexOf(log) >= 4;
-  }
 }
