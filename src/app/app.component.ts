@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  evens: number[] = [];
+  odds: number[] = [];
+
+  onCounterIncreased(counter: number) {
+    if (counter % 2 === 0) {
+      this.evens.push(counter);
+    } else {
+      this.odds.push(counter);
+    }
+  }
 }
