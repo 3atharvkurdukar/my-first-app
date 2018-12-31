@@ -1,4 +1,4 @@
-export class AccountService {
+export class AccountsService {
 
   accounts = [
     {
