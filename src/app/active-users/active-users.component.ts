@@ -1,5 +1,5 @@
 import { UsersService } from './../users.service';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-active-users',

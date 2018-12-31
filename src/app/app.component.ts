@@ -1,4 +1,4 @@
-import { UsersService } from './users.service';
+import { CounterService } from './counter.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor(private usersService: UsersService) {}
+  constructor(public counterService: CounterService) {}
 
 }
