@@ -40,6 +40,8 @@
       <p appBasicHighlight>Styled with basic-highlight directive</p>
       <p appBetterHighlight>Styled with better-highlight directive</p>
       <p [appBetterHighlight]="'red'" [defaultColor]="'yellow'">Styled with better-highlight directive</p>
+      <!-- For string data, the brackets and inner single-quote ('') can be skipped -->
+      <p appBetterHighlight="red" defaultColor="yellow">Styled with better-highlight directive</p>
     </div>
   </div>
 </div>
