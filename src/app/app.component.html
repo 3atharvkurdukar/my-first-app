@@ -8,12 +8,20 @@
       <ul class="list-group">
         <!-- No two structural directives can reside in one tag -->
         <div *ngIf="onlyOdd">
-          <li class="list-group-item" *ngFor="let odd of oddNumbers">
+          <li
+            class="list-group-item"
+            *ngFor="let odd of oddNumbers"
+            [ngStyle]="{'backgroundColor': odd % 2 !== 0 ? '#ffbbbb' : 'transparent'}"
+            [ngClass]="{red: odd % 2 !== 0}">
             {{ odd }}
           </li>
         </div>
         <div *ngIf="!onlyOdd">
-          <li class="list-group-item" *ngFor="let even of evenNumbers">
+          <li
+            class="list-group-item"
+            *ngFor="let even of evenNumbers"
+            [ngStyle]="{'backgroundColor': even % 2 !== 0 ? '#ffbbbb' : 'transparent'}"
+            [ngClass]="{red: even % 2 !== 0}">
             {{ even }}
           </li>
         </div>
