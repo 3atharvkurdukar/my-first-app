@@ -39,6 +39,7 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot(appRoutes, {useHash: true})       // Enable it if server is unable to parse the web
   ],
   exports: [RouterModule]
 })
