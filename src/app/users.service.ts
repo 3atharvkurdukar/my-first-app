@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs-compat';
+import { Subject } from 'rxjs';
 
 export class UsersService {
 
