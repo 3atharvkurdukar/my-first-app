@@ -42,21 +42,32 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="form-group">
+          <textarea class="form-control" name="questionAnswer" rows="3" [(ngModel)]="answer">
+          </textarea>
+        </div>
+        <p>Your reply: {{ answer }} </p>
         <div class="radio" *ngFor="let gender of genders" >
           <label for="gender">
             <input type="radio" name="gender" id="gender" [value]="gender" ngModel>
             {{ gender }}
           </label>
         </div>
-        <div class="form-group">
-          <textarea class="form-control" name="questionAnswer" rows="3" [(ngModel)]="answer">
-          </textarea>
-        </div>
-        <p>Your reply: {{ answer }} </p>
         <button class="btn btn-primary" type="submit" [disabled]="f.invalid">
           Submit
         </button>
       </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row" *ngIf="submitted" >
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>Username: {{ user.username }} </p>
+      <p>Email: {{ user.email }} </p>
+      <p>Secret Question: {{ user.secretQuestion }} </p>
+      <p>Answer: {{ user.answer }} </p>
+      <p>Gender: {{ user.gender }} </p>
     </div>
   </div>
 </div>
