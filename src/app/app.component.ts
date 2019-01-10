@@ -11,9 +11,22 @@ export class AppComponent {
   @ViewChild('f') signupForm: NgForm;
   defaultQuestion = 'pet';
   answer = '';
+  genders = ['Male', 'Female'];
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'Male'
+    // });
+    this.signupForm.form.patchValue({
+      userData: suggestedName
+    });
   }
 
   // onSubmit(form: NgForm) {
