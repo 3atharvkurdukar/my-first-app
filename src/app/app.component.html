@@ -27,7 +27,12 @@
               formControlName="email"
               class="form-control">
             <span class="help-block" *ngIf="signupForm.get('userData.email').invalid && signupForm.get('userData.email').touched">
-              Please enter a valid email
+              <span class="help-block" *ngIf="signupForm.get('userData.email').errors['emailForbidden']">
+                This email is invalid
+              </span>
+              <span class="help-block" *ngIf="signupForm.get('userData.email').errors['required']">
+                This field is required
+              </span>
             </span>
           </div>
         </div>
