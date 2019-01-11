@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
 
   onSubmit() {
     console.log(this.projectForm.value);
+    this.projectForm.reset();
   }
 
   forbiddenName(control: FormControl): {[s: string]: boolean} {
