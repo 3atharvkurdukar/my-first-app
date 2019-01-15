@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ShortenPipe implements PipeTransform {
 
-  transform(value: string): any {
-    if (value.length > 15) {
-      return value.substr(0, 15) + '...';
+  transform(value: string, limit: number): any {
+    if (value.length > limit) {
+      return value.substr(0, limit) + '...';
     } else {
       return value;
     }
