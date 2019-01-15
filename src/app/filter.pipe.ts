@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false     // An impure pipe is executed every time the data on the page changes *NOT RECOMMENDED*
 })
 export class FilterPipe implements PipeTransform {
 
