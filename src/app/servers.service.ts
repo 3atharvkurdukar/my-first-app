@@ -13,7 +13,15 @@ export class ServersService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-    return this.http.post(
+    // This appends data to the existing database
+    // return this.http.post(
+    //   'https://atharv-angular-http.firebaseio.com/servers.json',
+    //   servers,
+    //   { headers: headers }
+    // );
+
+    // This overwrites the data in the existing database
+    return this.http.put(
       'https://atharv-angular-http.firebaseio.com/servers.json',
       servers,
       { headers: headers }
