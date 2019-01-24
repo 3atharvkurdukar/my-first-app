@@ -19,4 +19,8 @@ export class ServersService {
       { headers: headers }
     );
   }
+
+  getServers() {
+    return this.http.get('https://atharv-angular-http.firebaseio.com/servers.json');
+  }
 }
