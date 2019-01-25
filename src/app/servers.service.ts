@@ -31,7 +31,7 @@ export class ServersService {
   getServers() {
     return this.http.get('https://atharv-angular-http.firebaseio.com/servers.json').pipe(
       map(
-        (response: Response) => response
+        (response: Response) => response.json()
       )
     );
   }

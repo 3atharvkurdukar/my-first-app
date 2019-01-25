@@ -36,8 +36,8 @@ export class AppComponent {
 
   onSave() {
     this.serversService.storeServers(this.servers).subscribe(
-      (servers) => {
-        console.log(servers);
+      (response: Response) => {
+        console.log(response.json());
       },
       (error) => console.log(error)
     );
@@ -45,9 +45,8 @@ export class AppComponent {
 
   onGet() {
     this.serversService.getServers().subscribe(
-      (response: Response) => {
-        const data = response.json();
-        console.log(data);
+      (servers: any[]) => {
+        this.servers = servers;
       },
       (error: any) => console.log(error)
     );
