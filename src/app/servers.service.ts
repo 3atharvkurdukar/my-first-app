@@ -30,7 +30,7 @@ export class ServersService {
   }
 
   getServers() {
-    return this.http.get('https://atharv-angular-http.firebaseio.com/servers').pipe(
+    return this.http.get('https://atharv-angular-http.firebaseio.com/servers.json').pipe(
       map(
         (response: Response) => response.json()
       )
@@ -39,5 +39,13 @@ export class ServersService {
           return throwError('Something went wrong!');
         })
       );
+  }
+
+  getAppName() {
+    return this.http.get('https://atharv-angular-http.firebaseio.com/appName.json').pipe(
+      map(
+        (response: Response) => response.json()
+      )
+    );
   }
 }
