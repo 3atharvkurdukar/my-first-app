@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-
+import { Http, Headers, Response } from '@angular/http';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +29,10 @@ export class ServersService {
   }
 
   getServers() {
-    return this.http.get('https://atharv-angular-http.firebaseio.com/servers.json');
+    return this.http.get('https://atharv-angular-http.firebaseio.com/servers.json').pipe(
+      map(
+        (response: Response) => response
+      )
+    );
   }
 }
